@@ -8,7 +8,7 @@ export default class Dummy extends Component {
     return <PresentDummy value={value} />;
   }
 
-  propTypes = {
+  static propTypes = {
     value: PropTypes.number
   };
 }
