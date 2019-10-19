@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Dummy from "./Dummy";
 import BetterDummy from "./BetterDummy";
+import CounterButton from "./CounterButton";
 
 class Counter extends Component {
   constructor(props) {
@@ -23,15 +24,16 @@ class Counter extends Component {
   render() {
     const { value, onIncrement, onDecrement } = this.props;
     return (
-      <p>
+      <div>
+        <CounterButton />
         <Dummy value={value} />
         <BetterDummy>{value}</BetterDummy>
         Clicked: {value} times
         <button onClick={onIncrement}>+</button>
         <button onClick={onDecrement}>-</button>
-        <button onClick={this.incrementIfOdd}>Increment if odd</button>{" "}
+        <button onClick={this.incrementIfOdd}>Increment if odd</button>
         <button onClick={this.incrementAsync}>Increment async</button>
-      </p>
+      </div>
     );
   }
 }

@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 export default class PresentDummy extends Component {
   render() {
     const { value } = this.props;
-    return <p> Value from Dummy Chain : {value}</p>;
+    return <span> Value from Dummy Chain : {value}</span>;
   }
 
-  propTypes = {
+  static propTypes = {
     value: PropTypes.number
   };
 }
