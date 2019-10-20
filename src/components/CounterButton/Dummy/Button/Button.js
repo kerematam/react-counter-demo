@@ -14,16 +14,19 @@ const CounterDisplayOnFunctionalComponent = () => (
 
 export default class Button extends Component {
   render() {
-    return [
-      <button
-        onClick={() => {
-          console.log("Click! : ", this.contex);
-        }}
-      >
-        Button Value :{this.context.counterValue}
-      </button>,
-      <CounterDisplayOnFunctionalComponent />
-    ];
+    const { counterValue, increaseCounter } = this.context;
+    return (
+      <>
+        <button
+          onClick={() => {
+            increaseCounter();
+          }}
+        >
+          Button Value : {counterValue}
+        </button>
+        <CounterDisplayOnFunctionalComponent />
+      </>
+    );
   }
 
   static contextType = CounterContext;
