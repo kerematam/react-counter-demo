@@ -1,20 +1,32 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Dummy from "./Dummy";
 import { CounterContext } from "./Context";
 
 export default class CounterButton extends Component {
-  render() {
-    return (
-      <CounterContext.Provider value={{counterValue : 1}}>
-        <div>
-          Counter Button with Contex API <Dummy />
-        </div>
-      </CounterContext.Provider>
-    );
+  constructor(props) {
+    super(props);
+    this.increaseCounter = () => {
+      this.setState(({ counterValue: value }) => ({
+        counterValue: value + 1
+      }));
+    };
+    this.state = {
+      counterValue: 2,
+      increaseCounter: this.increaseCounter
+    };
   }
 
-  static propTypes = {
-    value: PropTypes.number
-  };
+  render() {
+    const { counterValue, increaseCounter } = this.state;
+    
+    return (
+      <>
+        <CounterContext.Provider value={{ counterValue, increaseCounter }}>
+          <div>
+            Counter Button with Contex API <Dummy />
+          </div>
+        </CounterContext.Provider>
+      </>
+    );
+  }
 }
