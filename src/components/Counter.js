@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Dummy from "./Dummy";
 import BetterDummy from "./BetterDummy";
 import CounterButton from "./CounterButton";
+import TextForm from "./TextFocusingForm";
 
 class Counter extends Component {
   constructor(props) {
@@ -25,14 +26,19 @@ class Counter extends Component {
     const { value, onIncrement, onDecrement } = this.props;
     return (
       <div>
+        <hr />
         <CounterButton />
+        <hr />
         <Dummy value={value} />
         <BetterDummy>{value}</BetterDummy>
+        <hr />
         Clicked: {value} times
         <button onClick={onIncrement}>+</button>
         <button onClick={onDecrement}>-</button>
         <button onClick={this.incrementIfOdd}>Increment if odd</button>
         <button onClick={this.incrementAsync}>Increment async</button>
+        <hr />
+        <TextForm />
       </div>
     );
   }

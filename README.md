@@ -6,6 +6,13 @@ Contex-API Exercise :
         1. Contex-API-01:
             * Add dummy counters without Contex API
               to showcase the problem and motivation.
+
+            Implement :
+             
+
+            Discuss :
+             
+            
         2. Contex-API-02:
             * Add Dummy counter button with Contex API
             * Fix warnings on <p/> tags
