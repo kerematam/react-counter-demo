@@ -1,5 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { CounterContext } from "../../Context";
+
+const WithUseContext = () => {
+  const { counterValue } = useContext(CounterContext);
+
+  return <div>This is with useContext {counterValue}</div>;
+};
 
 class UseInLifeCycles extends Component {
   constructor(props, context) {
@@ -54,6 +60,7 @@ export default class Button extends Component {
         </button>
         <CounterDisplayOnFunctionalComponent />
         <UseInLifeCycles />
+        <WithUseContext />
       </>
     );
   }
