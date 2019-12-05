@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Dummy from "./Dummy";
 import BetterDummy from "./BetterDummy";
 import CounterButton from "./CounterButton";
+import SimpleModal from "./Modal";
+import { Button } from "@material-ui/core";
+import { myModal } from "../ApendModal/CustomModal";
 
 class Counter extends Component {
   constructor(props) {
@@ -37,6 +40,9 @@ class Counter extends Component {
         <button onClick={this.incrementIfOdd}>Increment if odd</button>
         <button onClick={this.incrementAsync}>Increment async</button>
         <hr />
+        <Button onClick={myModal.show} variant="contained">
+          Default
+        </Button>
       </div>
     );
   }

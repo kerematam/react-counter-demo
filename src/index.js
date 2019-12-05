@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 import Counter from './components/Counter'
 import counterReducer from './reducers'
 
+
 const store = createStore(counterReducer)
 const rootEl = document.getElementById('root')
 
